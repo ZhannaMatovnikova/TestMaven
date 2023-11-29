@@ -55,28 +55,3 @@ public class MainClass {
 //        driver.quit(); // закрыть браузер
     }
 }
-
-
-/* xpath Avito
-//div/button[@type = 'button' and @class='styles-module-root-C_ES7 styles-module-root_size_m-_IdhI styles-module-root_preset_accent-_pmQV'] - все категории
-//input[@data-marker='search-form/suggest'] строка поиска
-//a[@class='index-nav-link-muv1u index-login-NV2z_'] вход и регистрация
-
-/ancestor:: все предки элемента
-ancestor-or-self:: предки и собственный узел
-following-sibling:: соседи на уровень ниже
-preceding-sibling::  соседи на том же уровне
-parent:: родительский элемент
-
-функции
-
-xpath//tr[last()] последняя строка
-//a[text()='Text'] поиск по тексту в ссылке
-//button[contains(@class, 'ghnh'] найти элемент, класс которого содержит в себе кусочек
-//h1[contains(text(), 'How people']
-//input[starts-with(@title,'Go to')]
-
-
-
-
-*/
