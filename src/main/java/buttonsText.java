@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 public class buttonsText {
     public static void main(String[] args) {
+//        TODO выпилить ссылку на локальный chromedriver
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Жанна\\IdeaProjects\\untitled2\\drivers\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
@@ -16,7 +17,10 @@ public class buttonsText {
 переходим на страницу с результатами, выводим на консоль значения внутри поля на новой странице,
  стираем значение
  */
-        driver.get("https://ru.wikipedia.org");
+        String wiki;
+        wiki = "https://ru.wikipedia.org";
+        driver.get(wiki);
+//        String wiki = "https://ru.wikipedia.org";
         driver.findElement(By.xpath("//input[@id='searchInput']")).sendKeys("Selenium WebDriver");
         driver.findElement(By.xpath("//input[@id='searchButton']")).click();
         System.out.println(driver.findElement(By.xpath("//div[@id='searchText']/input")).getAttribute("value"));
@@ -33,11 +37,13 @@ public class buttonsText {
 осуществлен переход на другую страницу c ошибкой входа, выводим в консоль значение поля на новой странице
 ( тот же тестовый email)
  */
-        driver.get("https://vk.com/");
+
+        String vk = "https://vk.com/";
+        driver.get(vk);
         driver.findElement(By.xpath("//*[@id='index_email']")).sendKeys("testmail");
         driver.findElement(By.xpath("//button[@class=\"FlatButton FlatButton--primary FlatButton--size-l FlatButton--wide VkIdForm__button VkIdForm__signInButton\"]")).submit();
         System.out.println("Mail is: " + driver.findElement(By.xpath("//div[@class='vkc__DefaultSkin__input']//input")).getAttribute("value"));
-//        driver.quit();
+        driver.quit();
 
 
 
