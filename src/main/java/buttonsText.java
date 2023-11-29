@@ -29,7 +29,14 @@ public class buttonsText {
         driver.findElement(By.xpath("//form//dd/input[@id='user_email' and @name='user_email'] ")).sendKeys("test username");
         driver.findElement(By.xpath("//form[@class='mx-0 col-12 col-md-7 col-lg-5 js-signup-form position-relative z-2']//button")).click();
 
-
+/* заходим на страницу вк, вводим тестовое значение почты testmail в поле sign in,
+осуществлен переход на другую страницу c ошибкой входа, выводим в консоль значение поля на новой странице
+( тот же тестовый email)
+ */
+        driver.get("https://vk.com/");
+        driver.findElement(By.xpath("//*[@id='index_email']")).sendKeys("testmail");
+        driver.findElement(By.xpath("//button[@class=\"FlatButton FlatButton--primary FlatButton--size-l FlatButton--wide VkIdForm__button VkIdForm__signInButton\"]")).submit();
+        System.out.println("Mail is: " + driver.findElement(By.xpath("//div[@class='vkc__DefaultSkin__input']//input")).getAttribute("value"));
 //        driver.quit();
 
 
