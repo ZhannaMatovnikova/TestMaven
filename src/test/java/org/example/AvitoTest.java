@@ -10,10 +10,10 @@ import java.util.concurrent.TimeUnit;
 
 public class AvitoTest {
 
+
     public static MainPage mainPage;
     public static ProfilePage profilePage;
     public static WebDriver driver;
-
     @BeforeClass
     public static void setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Жанна\\IdeaProjects\\untitled2\\drivers\\chromedriver.exe");
@@ -24,17 +24,22 @@ public class AvitoTest {
 
         mainPage = new MainPage(driver);
         profilePage = new ProfilePage(driver);
-        driver = new ChromeDriver();}
+//        driver = new ChromeDriver();
+        }
 
 
     @Test
         public void FindAdvertTest(){
         mainPage.FindAdvert("Елка");
         mainPage.clickButtonFind();
-        driver.quit();
+//        driver.quit();
         }
     @AfterClass
     public static void tearDown() {
-        driver.quit();
+        profilePage.returnMain();
+        //  driver.navigate().back(); TODO разобраться почему не работает выход из драйвера
+        //driver.quit();
     }
+
+
 }

@@ -14,11 +14,11 @@ public class ProfilePage {
         PageFactory.initElements(driver, this);
         this.driver = driver; }
     /**
-     * определение локатора меню пользователя
+     * определение локатора 'Главная'
      */
     @FindBy(xpath = "//span[text()='Главная']")
     private WebElement returnMain;
-    public void ReturnMain(){
+    public void returnMain(){
         returnMain.click();
     }
 
