@@ -33,11 +33,11 @@ public class AllCheckboxes {
 //        actions.moveToElement(element).click().perform();
 
 //     узнаем количество чек-боксов
-       if (checkboxes.size() == 2) System.out.println("it's ok");
-       else System.out.println("FAIL!");
+        if (checkboxes.size() == 2) System.out.println("it's ok");
+        else System.out.println("FAIL!");
 //кликаем все чекбоксы по порядку в выбранном блоке
-       for (WebElement checkbox: checkboxes){
-           checkbox.click();
+        for (WebElement checkbox: checkboxes){
+            checkbox.click();
         }
 
 
