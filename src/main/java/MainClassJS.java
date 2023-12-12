@@ -50,19 +50,36 @@ public class MainClassJS {
 //        jse.executeScript("window.scrollBy(0, 1000)",""); //прокрутка страницы вниз
 //        jse.executeScript("window.scrollBy(0, -1000)",""); //прокрутка страницы вверх
 
-        driver.get("https://www.oracle.com/java/technologies/java-archive-misc-downloads.html#jdk8demos");
-        driver.findElement(By.cssSelector("body > div.f11w1 > section:nth-child(7) > div > p > a")).click();
-        //при нажатии на ссылку открывается новое окно браузера
-        String mainWindow = driver.getWindowHandle(); //задаем главное окно
 
-        for (String windowHandle:driver.getWindowHandles()){ //переключаемся на новое окно
-            driver.switchTo().window(windowHandle);
+
+
+//        driver.get("https://www.oracle.com/java/technologies/java-archive-misc-downloads.html#jdk8demos");
+//        driver.findElement(By.cssSelector("body > div.f11w1 > section:nth-child(7) > div > p > a")).click();
+//        //при нажатии на ссылку открывается новое окно браузера
+//        String mainWindow = driver.getWindowHandle(); //задаем главное окно
+//
+//        for (String windowHandle:driver.getWindowHandles()){ //переключаемся на новое окно
+//            driver.switchTo().window(windowHandle);
+//        }
+//
+//        driver.findElement(By.xpath("//button[text()='Products']")).click();
+//        driver.switchTo().window(mainWindow);
+//
+//        driver.findElement(By.cssSelector("#industries1")).click();
+//
+//
+
+
+
+        driver.get("https://signup.live.com/");
+       driver.findElement(By.cssSelector("#terms")).click();
+       String mainTab = driver.getWindowHandle();
+        for (String tab: driver.getWindowHandles()){
+            driver.switchTo().window(tab);
         }
-
-        driver.findElement(By.xpath("//button[text()='Products']")).click();
-        driver.switchTo().window(mainWindow);
-
-        driver.findElement(By.cssSelector("#industries1")).click();
+        driver.findElement(By.cssSelector("#c-shellmenu_44")).click();
+        driver.switchTo().window(mainTab);
+        driver.findElement(By.cssSelector("#MemberName")).sendKeys("test@mail.ru");
 
 
 
