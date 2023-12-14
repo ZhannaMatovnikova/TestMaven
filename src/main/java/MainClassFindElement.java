@@ -59,12 +59,12 @@ public class MainClassFindElement {
 
         //сделать скриншот - не работает конструкция
 
-        File screenshot = ((TakesScreenshot)driver.getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(screenshot, new File("C:\\screenshots\\screenshot1.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        File screenshot = ((TakesScreenshot)driver.getScreenshotAs(OutputType.FILE));
+//        try {
+//            FileUtils.copyFile(screenshot, new File("C:\\screenshots\\screenshot1.png"));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
 
 //        driver.quit();
